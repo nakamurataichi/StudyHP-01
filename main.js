@@ -31,10 +31,14 @@
         const index = sumOfcharCode % answers.length;
         const result = answers[index];
         //Todo診断処理
-        return 'result';
+        return result.replace(/\{userName\}/g, userName);
     }
+
     console.log(assessment('太郎'));
     console.log(assessment('次郎'));
+
+    //ButtonにClickイベントを登録
+    document.getElementById('assessment').addEventListener('click', e => {
+        console.log(assessment(document.getElementById('user-name').value));
+    });
 })();
-let result = answers[index];
-result = result.replace(/\{userName\}/g, userName);
